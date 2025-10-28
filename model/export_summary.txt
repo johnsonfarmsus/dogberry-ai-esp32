@@ -1,0 +1,33 @@
+WORD-LEVEL MODEL EXPORT SUMMARY
+======================================================================
+
+Model Architecture:
+  - Embedding(64)
+  - LSTM(256)
+  - Dense(4000)
+
+Parameters:
+  - Total: 1,612,704
+  - Size: 6.15 MB
+
+Vocabulary:
+  - Size: 4000 words
+  - Sequence length: 40 words
+  - Special tokens: <PAD>, <UNK>, <START>
+
+Output Files:
+  - Vocabulary: /Users/trevorjohnson/Documents/Projects/dogberry-bot/esp32_firmware/src/vocab_data_word.h
+  - Weights: /Users/trevorjohnson/Documents/Projects/dogberry-bot/esp32_firmware/src/model_weights_word.h
+
+Next Steps:
+  1. Update DogberryAI.h with new dimensions:
+     #define VOCAB_SIZE 4000
+     #define SEQ_LENGTH 40
+     #define EMBEDDING_DIM 64
+     #define LSTM_UNITS 256
+
+  2. Update DogberryAI.cpp to use word-level tokenization
+
+  3. Update main.cpp mention check interval to 60 seconds
+
+  4. Build and flash firmware
