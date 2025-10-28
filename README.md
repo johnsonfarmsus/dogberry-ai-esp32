@@ -4,7 +4,7 @@ A training pipeline for creating tiny LSTM language models that run on ESP32 mic
 
 ## Overview
 
-This repository contains everything needed to train a "Pico Language Model" (PicoLM) - a highly constrained neural network designed to run on resource-limited embedded devices while still producing coherent, contextual text generation.
+This repository contains everything needed to train a "Pico Language Model" (PicoLM) - a highly constrained neural network designed to run on resource-limited embedded devices while still producing coherent, contextual text generation. The hardware example for this project is an ESP32, specifically the [Lilygo T-Display S3R8](https://lilygo.cc/products/t-display-s3).
 
 ### Key Achievements
 
@@ -63,7 +63,7 @@ Key dependencies:
 
 - ESP32-S3 with 8MB PSRAM
 - 16MB Flash minimum
-- See [dogberry-bot](https://github.com/yourusername/dogberry-bot) for implementation
+- See [dogberry-bluesky-esp32](https://github.com/johnsonfarmsus/dogberry-bluesky-esp32) for implementation with Bluesky as a chatbot
 
 ## Training Pipeline
 
@@ -126,7 +126,7 @@ This generates two C header files:
 
 ### 4. Deploy to ESP32
 
-Copy the generated headers to the [dogberry-bot](https://github.com/yourusername/dogberry-bot) repository:
+Copy the generated headers to the [dogberry-bluesky-esp32](https://github.com/johnsonfarmsus/dogberry-bluesky-esp32) repository:
 
 ```bash
 cp model_weights_word.h ../dogberry-bot/esp32_firmware/src/
@@ -321,14 +321,13 @@ dogberry-model/
 | Word-8K | 8000 | 256 | 3.2M | 12.8MB | Excellent (too large) |
 
 ## License
+GNU Affero General Public License v3.0
 
-MIT License - See LICENSE file
-
-Training data (Shakespeare) is public domain.
+Training data is public domain literature sourced from [Project Gutenberg](https://www.gutenberg.org).
 
 ## Related Projects
 
-- [dogberry-bot](https://github.com/yourusername/dogberry-bot) - Bluesky bot implementation
+- [dogberry-bluesky-esp32](https://github.com/johnsonfarmsus/dogberry-bluesky-esp32) - Bluesky bot implementation on the ESP32
 
 ## Contributing
 
@@ -336,4 +335,4 @@ Contributions welcome! Areas of interest:
 - Quantization implementation
 - Alternative architectures (Transformer, GRU)
 - Training optimizations
-- Deployment to other platforms
+- Deployment to other small hardware
